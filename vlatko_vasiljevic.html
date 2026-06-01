@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vlatko Vasiljević</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F7F4EF;
+    --dark: #1A1A1A;
+    --mid: #4A4A4A;
+    --accent: #8B6E4E;
+    --light-border: #DDD8CF;
+  }
+  body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.7; }
+
+  nav {
+    padding: 24px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--light-border);
+  }
+  .nav-name { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--dark); font-weight: 600; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--dark); }
+
+  .hero {
+    padding: 56px 8% 52px;
+    border-bottom: 1px solid var(--light-border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    background: linear-gradient(to right, var(--cream) 55%, #EDE7DC 55%);
+  }
+  .hero-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(38px, 5vw, 68px); font-weight: 700; line-height: 1.1; color: var(--dark); margin-bottom: 20px; }
+  .hero-subtitle { font-size: 16px; font-weight: 300; color: var(--mid); line-height: 1.8; margin-bottom: 32px; }
+  .hero-cta { display: inline-block; padding: 12px 32px; border: 1.5px solid var(--dark); color: var(--dark); text-decoration: none; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s; }
+  .hero-cta:hover { background: var(--dark); color: var(--cream); }
+
+  section { padding: 52px 8%; border-bottom: 1px solid var(--light-border); }
+
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 36px; }
+  .section-num { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--accent); opacity: 0.7; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: var(--dark); }
+  .section-line { flex: 1; height: 1px; background: var(--light-border); }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .about-text { font-size: 15px; font-weight: 300; color: var(--mid); line-height: 1.9; }
+  .about-text p + p { margin-top: 16px; }
+  .about-quote { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--dark); line-height: 1.5; padding-left: 20px; border-left: 2px solid var(--accent); font-style: italic; }
+
+  .interests-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--light-border); border: 1px solid var(--light-border); }
+  .interest-item { background: var(--cream); padding: 36px 20px; text-align: center; }
+  .interest-icon { font-size: 28px; margin-bottom: 12px; }
+  .interest-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .interest-desc { font-size: 13px; font-weight: 300; color: var(--mid); }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+  .contact-intro { font-family: 'Playfair Display', serif; font-size: 22px; line-height: 1.5; color: var(--dark); font-style: italic; }
+  .contact-items { display: flex; flex-direction: column; }
+  .contact-row { display: flex; flex-direction: column; gap: 4px; padding: 20px 0; border-bottom: 1px solid var(--light-border); }
+  .contact-row:first-child { padding-top: 0; }
+  .contact-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .contact-type { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+  .contact-val { font-size: 15px; color: var(--dark); font-weight: 300; }
+
+  footer { padding: 28px 8%; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--mid); }
+  .footer-note { font-size: 12px; color: var(--light-border); letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">V. Vasiljević</span>
+  <ul class="nav-links">
+    <li><a href="#o-meni">O meni</a></li>
+    <li><a href="#interesovanja">Interesovanja</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div>
+    <p class="hero-label">Učenik &nbsp;·&nbsp; Srbija</p>
+    <h1>Vlatko<br>Vasiljević</h1>
+    <p class="hero-subtitle">Učenik informatičke gimnazije koji voli da kodira, izlazi i uživa u životu na svoj način.</p>
+    <a href="#kontakt" class="hero-cta">Kontaktirajte me</a>
+  </div>
+  <div></div>
+</div>
+
+<section id="o-meni">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">O meni</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Zovem se Vlatko Vasiljević i učenik sam informatičke gimnazije. Svaki dan učim nešto novo i trudim se da budem bolji nego juče.</p>
+      <p>Van škole, najsrećniji sam na izlascima sa društvom. Cenim dobre ljude, dobru muziku i slobodne večeri koje traju duže nego što je planirano.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="interesovanja">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Interesovanja</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="interests-grid">
+    <div class="interest-item">
+      <div class="interest-icon">💻</div>
+      <p class="interest-label">Informatika</p>
+      <p class="interest-desc">Programiranje, logika i rešavanje problema.</p>
+    </div>
+    <div class="interest-item">
+      <div class="interest-icon">🌙</div>
+      <p class="interest-label">Izlasci</p>
+      <p class="interest-desc">Dobro društvo, dobra muzika i noći koje pamtiš.</p>
+    </div>
+    <div class="interest-item">
+      <div class="interest-icon">🥃</div>
+      <p class="interest-label">Vodka</p>
+      <p class="interest-desc">Klasičan izbor za klasične večeri.</p>
+    </div>
+    <div class="interest-item">
+      <div class="interest-icon">🫙</div>
+      <p class="interest-label">Snus</p>
+      <p class="interest-desc">Uvek.</p>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Kontakt</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="contact-grid">
+    <p class="contact-intro">Javi se.</p>
+    <div class="contact-items">
+      <div class="contact-row">
+        <span class="contact-type">Email</span>
+        <span class="contact-val">digicentar5@gmail.com</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-type">Telefon</span>
+        <span class="contact-val">060 889 1315</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Vlatko Vasiljević</span>
+  <span class="footer-note">© 2025</span>
+</footer>
+
+</body>
+</html>
